@@ -1,0 +1,22 @@
+#story_watch_outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#story_watch{
+margin-top: 0.5cm;
+ height: 90vh;
+ width: 30vw;
+ border: 1px solid black;   
+ border-radius: 10px;
+ /* padding: 25px; */
+ /* color: yellow; */
+ font-size: 30px;
+}
+#for_text_story{
+    display: none;
+}
+input[type='hidden']{
+    visibility:hidden;
+    position:absolute;
+}

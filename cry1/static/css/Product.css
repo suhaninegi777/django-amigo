@@ -1,0 +1,207 @@
+/* ------------------------------------------------------------------SHOP_PAGE-------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: "Josefin Sans", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: 400;
+ font-style: normal;
+}
+.page_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 40vh;
+    width: 100%;
+    background-image: url('../images/b1.jpg');
+}
+navbar{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.first_h3{
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 65px;
+    text-align: center;
+    color: white;
+    
+}
+
+/* .page_header{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    position: relative !important;
+    
+} */
+.page_header h3{
+    font-size: 46px;
+    margin-bottom: 8px;
+}
+.all_product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    margin: 0.8cm;
+    gap: 30px;
+}
+
+#products_section {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid rgba(166, 162, 162, 0.363);
+    border-radius: 25px;
+    position: relative;
+   margin: 15px 0;
+}
+
+#products_section:hover {
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.129);
+}
+
+.product img {
+    /* height: 250px;
+    width: 270px; */
+    width: 100%;
+    border-radius: 20px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik', sans-serif;
+}
+
+.description p {
+    color: #0000008f;
+    padding: 5px;
+}
+
+.description h4 {
+    padding: 10px 0px;
+    font-size: larger;
+    color: rgb(54, 160, 150);
+}
+.description .star {
+    padding-top: 3px;
+    display: flex;
+}
+.description .star i {
+    color:orangered;
+}
+
+.product .delivery {
+    position: absolute;
+    background-color: rgba(0, 128, 0, 0.116);
+    right: 10px;
+    bottom: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    color: rgb(31, 135, 124);
+}
+
+/* --------------------------------------------------------------------newsletter------------------------------------------------------------ */
+
+.newsletter {
+    background-color: rgb(7, 7, 149);   
+    /* display: flex; */
+    padding: 35px 70px;
+    /* justify-content: space-between; */
+margin-bottom: 1cm;
+}
+.nl{
+    display: flex;
+    /* background: #000; */
+    justify-content: space-between;
+    /* gap: 20px; */
+    font-family: 'Rubik', sans-serif;
+    /* flex-wrap: wrap; */
+}
+.newsletter h3 {
+    font-size: 28px;
+    word-spacing: 1px;
+    letter-spacing: 1.5px;
+    color: white;
+}
+
+.newsletter p {
+    font-weight: 600;
+    color: #00000060;
+    padding-top: 10px;
+}
+
+.newsletter span {
+    color: orange;
+}
+
+.newsletter input {
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 12px 15px;
+    max-width: 100%;
+    outline: none;
+    border: transparent;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.input_side {
+    display: flex;
+    align-items: center;
+}
+
+.green_button{
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #0a7352cb;
+    height: 3rem;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 5px;
+}
+/* --------------------------------------------------------------------FOOTER------------------------------------------------------------ */
+footer {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 350;
+    margin-bottom: 1cm;
+    line-height: 28px;
+    /* padding:0cm 1cm ; */
+}
+
+footer li {
+    list-style: none;
+    font-weight: 300;
+}
+
+footer h3 {
+    padding: 18px 0px;
+}
+
+footer button {
+    padding: 0px;
+    border: 4px solid rgba(0, 128, 0, 0.633);
+    border-radius: 5px;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}

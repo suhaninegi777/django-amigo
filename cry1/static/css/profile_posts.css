@@ -1,0 +1,86 @@
+/* *{
+    border: 1px solid black;
+} */
+.post_absolute_part{
+    display: none;
+    z-index: 999;
+    position: absolute;
+    height: 93vh;
+    max-width:80vw;
+    background: #ffffffa7;
+    /* margin: auto; */
+    top: 3%;
+    bottom: 10%;
+    right: 5%;
+    left: 10.5%;
+    padding-top: 1cm;
+    border-radius: 15px;
+    /* padding-bottom:1cm; */
+}
+#create_post{
+    /* margin-top: 3%; */
+    max-height: 80vh;
+    max-width: 70vw;
+    background: white;
+    text-align: center;
+    border-radius: 4px;
+    min-width:580px;
+}        
+#showpost{
+    display: none;
+    z-index: 999;
+    position: absolute;
+    height: 93vh;
+    max-width:80vw;
+    background-color: transparent;
+    /* background: #cccccca7; */
+    margin: auto;
+    top: 5%;
+    bottom: 5%;
+    right: 5%;
+    left: 10.5%;
+    padding: 1cm 1cm;
+}
+.row{
+    margin-top: 1cm;
+    width: 100%;
+    /* margin-left: 5cm; */
+    /* background-color: yellowgreen; */
+    /* padding: 20px; */
+}
+.cross{
+    position: absolute;
+    top: 0cm;
+    right:0.2cm;
+    font-size:50px;
+    font-weight: 300;
+    color: white;
+    background: transparent;
+}
+
+.editpage{
+    display: none;
+}
+
+/* .profiledetails ul{
+    border-top: 1px solid white;
+} */
+.editpage form{
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.editpage form span{
+    border-bottom:1px solid black ;
+}
+.sub_but{
+    align-self: self-start;
+    border-radius: 5px;
+    padding: 1px 3px;
+
+}
+.editpage input,textarea{
+padding: 3px;
+border-radius: 5px;
+}

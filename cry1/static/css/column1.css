@@ -1,0 +1,225 @@
+/* like / comment / story pop-up */
+
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+.wholehome{
+    width: 100%;
+    background-color: red;
+}
+
+
+
+@media (max-width: 991.98px) {
+    .custom-width {
+        max-width: 10%;
+        padding: auto;
+        margin: auto;
+    }
+    .sidebar b {
+        display: none;
+    }
+}
+
+@media (max-width: 576.98px) {
+    .custom-width {
+        display: none;
+    }
+    .sidebar b {
+        display: none;
+    }
+    .above_one {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        max-width: 100%;
+        padding: 10px;
+    }
+    .above_one .inp {
+        width: 200px;
+        min-width: 20px;
+    }
+}
+
+.comblock {
+    display: none;
+    position: relative;
+    background-color: rgb(244, 244, 244);
+    color: black;
+    padding: 15px;
+    min-height: 150px;
+    width: 100%;
+    border-radius: 10px;
+    /* top: 255px; */
+    /* right: 5.5cm; */
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    z-index: 9999;
+    /* Ensure the popup is on top of other elements */
+    overflow: auto;
+    /* Enable scrolling if content exceeds viewport height */
+}
+
+
+/* Close button styles */
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10000;
+    /* Ensure the close button is on top of other elements */
+}
+
+
+/* Story watch container styles */
+
+#story_watch_outer {
+    position: relative;
+    margin: 10% auto;
+    /* Center the popup vertically and horizontally */
+    max-width: 80%;
+    /* Adjust the maximum width as needed */
+    background-color: #fff;
+    /* White background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Drop shadow effect */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Enable scrolling if content exceeds viewport height */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+}
+
+
+/* Modal content styles */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* Center the modal vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    /* Adjust the maximum width as needed */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+
+
+/* Close button styles */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Image styles */
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    /* Add some space between images */
+}
+
+/* ///////////////////////////////////////////////////-INSTAGRAM STORY TYPE-////////////////////////////////////////// */
+.story__slider {
+    width: 450px;
+    height: 800px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .story__slide {
+    position: relative;
+  }
+  
+  .story__slide video,
+  .story__slide img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .story__pagination {
+    /* to make pagination stick to the top 
+    bottom: unset !important;
+    top: 8px !important;
+    */
+    display: flex;
+    padding: 0 4px;
+  }
+  
+  .story__pagination .swiper-pagination-bullet {
+    flex-grow: 1;
+    border-radius: 100vh;
+    height: 3px;
+    margin: 0 2px !important;
+    background-color: rgba(247, 247, 245, 0.4);
+    opacity: 1;
+    color: red;
+  }
+  
+  .story__pagination .swiper-pagination-bullet .swiper-pagination-progress {
+    height: 100%;
+    width: 0%;
+    border-radius: 100vh;
+    background-color: #f7f7f5;
+  }
+  
+  .story__prev,
+  .story__next {
+    height: 100%;
+    width: 50%;
+    top: 0;
+    margin-top: 0;
+  }
+  
+  .story__prev::after,
+  .story__next::after {
+    content: none;
+  }
+  
+  .story__prev {
+    left: 0;
+  }
+  
+  .story__next {
+    right: 0;
+  }
+  

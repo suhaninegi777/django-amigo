@@ -1,0 +1,83 @@
+{% extends 'sideNav.html' %}
+    {% load static %}
+    {% block start %}
+<div class="Messsenger_whole_page d-flex w-100%">
+    <div class="text-center bg-primary chit_chat">
+        <!------------personall messege ----------------------------------------------->
+        <div class="personal_msg d-flex flex-column">
+            <div class="d-flex  w-100% align-items-center py-4 px-2" id="chatheading">
+                <span id="Storydabba">
+                    <img src="{% static 'images/amigo.png' %}" alt="why not">
+                </span>
+                <div class="text-start pt-2">
+                    <b class="fs-5" id="user2"></b>
+                    <p></p>
+                </div>
+            </div>
+            <!--_________________________ showing msges ____________________________-->
+            <div class="d-flex flex-column msgs" style="padding-bottom: 1.4cm;">
+                <div id="between_msges sent" class="d-none">
+                    <div class="msg_bg"></div>
+                </div>
+                <div id="between_msges rev" class="d-none">
+                    <div class="msg_bg bg-primary" style="float:left;"></div>
+                </div>
+            </div>
+
+            <h2 class="msgInfo" style="padding-top: 30%;">
+                Click on user to chat with them
+            </h2>
+
+            <!--$$$$$$$$_____________msg_typing_container__________________$$$$$$$$$$$$$$$-->
+            <div id="msg_typing_container" class="align-self-center">
+                <form action="" id="msgform" method="post" class="d-flex" style="gap: 5PX;">
+                    {% csrf_token %}
+                    <i class="fa-solid fa-microphone-lines "></i>
+                    <input type="hidden" name="uid" id="uid" value="">
+                    <input type="text" id="msg_typing" name="msg_typing" placeholder="write a messege">
+                    <button class="px-1 m-0" style="outline: none; border-radius: 50%;" id="sentbtn" type="submit"
+                        title="sentbtn">
+                        <i class="fa-sharp fa-regular fa-paper-plane" style="font-size: 16px;"></i>
+                    </button>
+                    <!-- </div> -->
+                </form>
+            </div>
+
+        </div>
+
+        <!-------------------------multi_people_msg-------------------------------------------->
+        <div class="border border-error chatbox_view ">
+            <div class="px-5 pt-3 pb-2 mb-2 topBox" id="st" style="border-bottom:1px solid white;">
+                <h1 style="color: #ff0054;">Chit-Chat &#x1F609;</h1>
+                <div class=" d-flex gap-3 align-items-center">
+                    <input type="text" style="width: 300px; border-radius: 10px; font-size: 20px; padding: 1px 6px;"
+                        placeholder="searchbar">
+                    <i class="fa-solid fa-magnifying-glass fs-5 " style="color: white;"></i>
+                </div>
+            </div>
+            <div class="d-flex flex-column gap-2 mutipeople">
+                {% for i in alluser %}
+                <div class="chatterbox msg d-flex px-2 gap-4 border border-error py-2 align-items-start" data-user="{{i}}"
+                    data-user_id="{{i.id}}">
+                    <span id="Storydabba">
+                        <img src="{% static 'images/amigo.png' %}" alt="why not">
+                    </span>
+                    <div class="d-flex flex-column align-items-start msg_outer_box">
+                        <b class="fs-5">{{i}}</b>
+                        <input type="hidden" value="{{i}}" id="fui">
+                        <p>
+                            i will update it
+                        </p>
+                    </div>
+                    <span class="pt-2"> 12:54</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+{% endblock %}

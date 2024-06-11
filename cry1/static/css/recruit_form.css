@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* border: 1px solid palevioletred; */
+}
+body{
+    /* background-color: yellow; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    border-radius: 10px;
+}
+.apply_box{
+   max-width:850px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 30px;
+    background-color: #fff;/* x,y,z,color */
+    box-shadow: 9px 9px 0px rgba(220, 220, 220, 0.67);
+    border-radius: 5px;
+}
+.button{
+    text-align: right;
+    margin-top: 40px;
+}
+.apply_now{
+    padding: 10px;
+    color: white;
+    background-color: red;
+    transition: .5s ease-in;
+    border-radius: 5px;
+    border-color: 1px red;
+    font-weight: 600;
+}
+button:hover{
+background-color: brown;
+cursor: pointer;
+transition: .5s ease-out;
+}
+.form_container{
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+.options_textarea{
+    display: grid;
+    grid-column:  span 2;  
+}
+textarea{
+    width: 100%;
+}
+input{
+    height: 20px;
+}
+input,select,textarea{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+input,textarea,select:focus{
+    outline-color: rgb(14, 218, 249); 
+}
+
+@media (max-width:460px) {
+    .options_textarea{
+        display: grid;
+        grid-column: 1 / span 1;   
+    } 
+};
+select,input,textarea{
+    font-size: 20px;
+    text-transform: capitalize;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 30px;
+    padding: 15px;
+}
+input,textarea,select:focus{
+    outline-color: rgb(0, 229, 255); 
+}
+label{
+    font-size: large;
+    text-transform: capitalize;
+    font-weight:550;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,19 @@
+/* .sizing{
+
+} */
+
+@media (max-width: 767.98px){ 
+   .sizing{
+    display: flex;
+    flex-direction: row;
+   }
+   ul{
+     padding:auto 
+   }
+}
+@media (max-width: 576px){ 
+    .sizing{
+        display: flex;
+        flex-direction: column;
+    }
+}

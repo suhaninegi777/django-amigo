@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* personal msg */
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* border:1px solid black; */
+}
+.Messsenger_whole_page{
+    width: 100%;
+}
+.msg_bg {
+    float: right;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+}
+
+#msg_siba {
+    background-color: #bde0fe;
+}
+
+
+.personal_msg {
+    background-color: white;
+    /* width: 55%; */
+    /* background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%); */
+    width: 70%;
+    /* background-image: linear-gradient( to right,#43c6ac, #f8ffae); */
+    height: 100%;
+    /* overflow-y: scroll; */
+}
+
+#msg_typing_container {
+    position:sticky;
+    /* margin-top: 120px; */
+    /* /* z-index: 1; */
+    top: 90%;
+    
+ 
+}
+
+#msg_typing {
+    width: 650px;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+#msg_typing_container i {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.msgbox {
+    width: 300px;
+    padding: 20px;
+}
+
+#chatheading {
+    /* background-color: white; */
+    background-color: black;
+    position: sticky;
+    top: 0;
+    /* height: 90px; */
+    z-index: 1;
+    color :white;
+}
+
+/* multipeople  */
+/* .multipeople{
+    height: 100%;
+    overflow-y: scroll ;
+} */
+.chit_chat {
+    background: #000;
+    color: #212529;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+}
+
+.chatbox_view {
+    border: 5px solid white;
+    border-radius: 15px;
+    padding: 0 10px;
+    height: 100VH;
+    overflow-y: scroll ;
+    width: 35%;
+    background-color: black;
+}
+
+.chatbox_view .topBox {
+    /* position: fixed;
+    top: 0; */
+    z-index: 1;
+    background-color: black;
+    /* border: 1px solid whitesmoke; */
+}
+
+#st {
+    right: 15px;
+    max-width: 389px;
+
+}
+
+.chatterbox {
+    border-radius: 15px;
+    /* background-color: #a2d2ff; */
+background-color: #000;
+color: white;
+}
+
+#Storydabba {
+    height: 60px;
+    width: 60px;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: rgb(203, 243, 247);
+    position: relative;
+    border: 1px solid white;
+}
+
+/* .mutipeople {
+    margin-top: 120px;
+} */
+#chatheading{
+    display: none;
+}
+.Messsenger_whole_page img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media screen and(max-width: 992px) {
+    #msg_typing {
+        max-width: 500px;
+    }
+}

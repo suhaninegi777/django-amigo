@@ -1,0 +1,145 @@
+<!-- <div class="container-fluid p-0 m-0 ">
+    <div style="z-index: 1;" class="nameInsta above_one">
+        <b>Instagram</b>
+        <div class="d-flex">
+            <input class="inp"><i class="fa-regular fa-heart p-2"></i>
+        </div>
+    </div> -->
+
+    <!---------------------------------------------column1----------------------------------------------------------- -->
+    {% extends 'sideNav.html' %} 
+    {% load static %} 
+    {% block start %}
+
+    <div class="d-flex sizing wholehome">
+
+        <!-- -------------------------------------------column2----------------------------------------------------------- -->
+        <div id="middleone">
+            <div class="custom-height">
+                <div class="storyhorizont">
+                    <!-- 1 -->
+                    {% for i in storiesdata %}
+                    <div class="content d-inline p-1 py-2">
+                        <span class="Storydabba">
+                            <span class="InnerStorydabba" data-id="{{i.id}}" data-name={{i.username}} >
+                                <!-- yaha lagani he  -->
+                                <img src="{% static 'images/amigo.png' %}" alt="why not" style="height: 100%; width: 100%;">
+                            </span>
+                        </span>
+                        <span class='storyName' style="color: black; background: white;">{{i.username}}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+<!-- jese hi ye user i touch hogi wwo id jayegi ajax ke paas uske through jani chahiye story ke paas or usme se fetch karke nikalni
+story username id se layi hui id match karke usse story ka data fetch karenge or show karenge -->
+
+            <!-- --------------column2/POST part------------------ -->
+            {% for i in postdata %}
+            <div class="PostContents my-3">
+                <div class="postHeader d-flex align-items-center justify-content-between">
+                    <div class="d-flex">
+                        <div class="PostkaCirclecover">
+                            <div class="PostkaCircle">
+                                <div class="PostkaInnerCircle overflow-hidden">
+                                    {% for im in userimg %} {% if im.linked == i.username %}
+                                    <img src="{{im.image.name}}" alt="{{i.username}}">
+                                    {% endif %} {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <span class='pt-2 sn'>
+                            <b>{{i.username}}</b><br>
+                            <span class='mv'>post of user</span>
+                        </span>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical fs-4 pe-4"></i>
+                </div>
+                <div class="post_icons_image">
+                    <div class="postImage ">
+                        <img src="{% static 'images/' %}{{ i.post.name}}" alt="postimng" style="min-height: 300px;max-height: 400px;">
+                    </div>
+
+                    <div class="post_icons">
+                        <div>
+                            <i class="fa-solid fs-2 fa-heart px-2 {% if i.has_liked %} liked {% endif %}" id="like" data-id="{{i.id}}" style="color:{% if i.has_liked %} red; {% else %} white; {% endif %}" id="like" data-id="{{i.pk}}' data-name="{{i.username.id}}"></i>
+                            <div class="like_counter text-center">{{i.like_count}}</div>
+                        </div>
+                        <div class="relative-positioned-element">
+                            <i class="fa-solid fs-2 fa-comment px-2 " id="comment" data-id="{{i.pk}}"></i>
+
+                            <input type="hidden" class="csrfmiddlewaretoken{{i.pk}}" value="{{csrf_token}}">
+
+                        </div>
+                        <i class="fa-solid fa-share px-2 fs-2" id="share"></i>
+                        <i class="fa-regular fa-bookmark px-2 fs-2" id="save"></i>
+                        <!-- <i class="fa-solid fa-square-arrow-up-right"></i> -->
+
+                    </div>
+                </div>
+                <!-- hello i love strangers things in any cost i am waiting for its another part fuckingly -->
+                <div class="ps-5 pe-4 pt-1 pb-0">
+                    <p>{{i.caption}}</p>
+                </div>
+                <div id="comblock" class="comblock com{{i.pk}}">
+                    <div class="d-flex gap-2">
+                        <input type="text" name="comtext" class="comtext w-100 rounded-3 border-0 p-2 px-3" placeholder="add comment here">
+                        <button id='combut' class="btn btn-success">
+                            <i class="fa-sharp fa-regular fa-paper-plane" style="font-size: 16px;"></i>
+                        </button>
+                    </div>
+                    <div class="cmts py-3">
+                        <span class='pt-2 sn'>
+                            <b id="SecUserName"></b>
+                            <p id="commentplaced">already comments</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- -------------------------------------------column3----------------------------------------------------------- -->
+
+        <div class="last-column-width">
+            <div>
+                <div class="text-center" id="joke_generator">
+                    <div style="font-size: 100px;" class="mt-5">&#128540;</div>
+                    <h3 class="pt-3 mx-3">{{jokes}}
+                    </h3>
+                </div>
+                <footer class="footer">
+                    <ul class="list-unstyled fs-2 ">
+                        <li><a><i class="fa-solid fa-house fa"></i></a></li>
+                        <li><a><i class="fa-regular fa-compass"></i></a></li>
+                        <li><a><i class="fa-solid fa-film fa"></i></a></li>
+                        <li><a><i class="fa-brands fa-facebook-messenger fa"></i></a></li>
+                        <li><a><i class="fa-sharp fa-regular fa-circle-plus fa"></i></a></li>
+                        <li><a><i class="fa-solid fa-user fa"></i></a></li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content" id="popup-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="story">
+
+                    <div class="story__slider swiper">
+                        <div class="story__next swiper-button-next"></div>
+                        <div class="story__prev swiper-button-prev"></div>
+                      <div class="story__wrapper swiper-wrapper">
+                        <!-- {% for url in image_urls %} -->
+                        <div class="story__slide swiper-slide">
+                            <img src=" ">
+                        </div>
+                        <!-- {% endfor %} -->
+                      </div>
+                      <div class="story__pagination swiper-pagination"></div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

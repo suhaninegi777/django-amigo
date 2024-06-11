@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+.custom-width {
+    width: 25%;
+    background-color:black;
+    color: white !important;
+    height: 100vh;
+    position: sticky;
+    left: 0; 
+    top: 0;
+}
+
+.fa{
+    padding-right: 10px;
+}
+
+.sidebarItems ul{
+    /* d-flex flex-column gap-4 */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: white !important;
+    margin-top: 20%;
+    font-size: 23px;
+}
+.more{
+    margin-top: 30%;
+    font-size: 23px;
+
+}
+@media (max-width: 991.98px){ 
+    .custom-width{
+        max-width: 10%;
+        padding: auto;
+        margin: auto;
+    }
+    .sidebar b{
+        display: none;
+    }
+}
+
+@media (max-width: 576.98px){ 
+    .custom-width {
+        display: none;
+    }
+
+    .sidebar b{
+      display: none;
+    }
+
+    
+     .inp{
+        width: 200px;
+        min-width: 20px;
+     }
+    
+}

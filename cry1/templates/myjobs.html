@@ -1,0 +1,103 @@
+
+{% extends 'IconSideNav.html' %}
+<div class="row">
+    <div class="col-1">  
+        
+        {% load static %}
+        {% block start %}
+    </div>
+  
+    <div class="col-10 mx-auto">
+<!-- Button trigger modal -->
+
+  
+ <!---------------------------------topsearchbar---------------------------------------- -->
+ <navbar class="container">
+    <div class=" d-flex justify-content-evenly align-items-center mt-1">
+        <b class="fs-4">My Jobs</b>
+        <div></div>
+        <button type="submit" style="border: 3px solid black;"><a href="/Addjob/" style="color: black;"><i class="fa-solid fa-plus"> add jobs</i></a></button>
+        <button type="submit" style="border: 3px solid black;"><a href="/Addcompany/" style="color: black;"><i class="fa-solid fa-plus"> add company</i></a></button>
+    </div>
+    <hr>
+</navbar>
+        <!---------------------------------topsearchbar---------------------------------------- -->
+        <!--------------------------------------hero section------------------------------------------ -->
+        <div class="hero_section container">
+            <span>search result</span>
+            <p>Sort by:relevance- date</p>
+            <div class="row gx-5">
+                <!-------------------------------jobCards------------------------------------ -->
+                <h2 class="py-3 mt-3">Posted Jobs</h2>
+                <div class="d-flex w-100 gap-5 " id="ww">
+                  {% if data %}
+                  {% for j in data %}
+                    
+                  <div class="job_cards jc" data-bs-toggle="modal" data-bs-target="#exampleModal{{j.id}}">
+                      <div>
+                          <div class="job_profile d-flex gap-5 align-items-start">
+                              <h2>{{j.job.jobrequired}}</h2>
+                              <i class="fa-solid fa-ellipsis-vertical pt-2 fs-4"></i>
+                          </div>
+                          <p>{{j.job.company.companyname}} <br>
+                              {{j.job.company.address}}</p>
+                          <p>Applicants</p>
+                          <ul>
+                              {% for a in j.aplicants %}
+                              <li>{{a.applicant}} | <a href="{{a.cv.url}}" download> CV <i class="fa fa-file"> </i></a>  </li>
+                              {% endfor %}
+                          </ul>
+                      </div>
+                      {% comment %} <p>visited _ minute ago</p> {% endcomment %}
+
+                  </div>
+                  
+                      <!-- Modal -->
+
+                  
+                  {% endfor %}                  
+                  {% else %}
+                  no jobs
+                  {% endif %}
+                    
+                </div>
+                <h2 class="py-3 mt-3">Applied Jobs</h2>
+                <div class="d-flex w-100 gap-5 " id="ww">
+                    
+                    {% if applieddata %}
+                    {% for j in applieddata %}
+                    
+                    <div class="job_cards jc" data-bs-toggle="modal" data-bs-target="#exampleModal{{j.id}}">
+                        <div>
+                            <div class="job_profile d-flex gap-5 align-items-start">
+                                <h2>{{j.job.jobrequired}}</h2>
+                                <i class="fa-solid fa-ellipsis-vertical pt-2 fs-4"></i>
+                            </div>
+                            <p>{{j.job.company.companyname}} <br>
+                                {{j.job.company.address}}</p>
+                        </div>
+                        {% comment %} <p>visited _ minute ago</p> {% endcomment %}
+
+                    </div>
+                    
+                        <!-- Modal -->
+
+                    
+                    {% endfor %}                    
+                    {% else %}
+
+                    no jobs
+                    {% endif %}
+                    
+                </div>
+
+                <!---------------------------------jobDetail---------------------------------- -->
+           
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}

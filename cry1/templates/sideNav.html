@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/column1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/column2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/column3.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/profile.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/sideNav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile_posts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/seconduser.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/recruit_form.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/messenger.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sideNav.css' %}">
+    <script defer src="{% static 'js/search.js' %}"></script>
+    <script defer src="{% static 'js/profile.js' %}"></script>
+    <script defer src="{% static 'js/messenger.js' %}"></script>
+    <script defer src="{% static 'js/home.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- fontawesome icons -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+
+<body>
+        <div class="d-flex ">
+            <div class="custom-width sidebar ">
+                <div >
+                    <div class="px-4 py-4">
+                        <div>
+                            <!-- <b class="fs-3">A_I_O</b> -->
+                            <img src="{% static 'images/amigo.png' %} " class="bg-white"
+                             style=" border-radius:15px; 
+                              width: 100px; height: 50px;
+                               object-fit: cover ">
+                        </div>
+                        <div class="sidebarItems">
+                            <ul class="list-unstyled">
+                                <li><a class="text-decoration-none" style="color: white;" href="/home/"><i class="fa-solid fa-house fa"></i><b>Home</b></a></li>
+                                <li><a class="text-decoration-none" style="color: white;" href="/search/"><i class="fa-solid fa-magnifying-glass fa"></i><b>Search</b></a></li>
+                                <li><a class="text-decoration-none" style="color: white;" href="/groups/"><i class="fa-solid fa-people-group fa"></i><b>Groups</b></a></li>
+                                <li><a class="text-decoration-none" style="color: white;" href="/messenger/"><i class="fa-brands fa-facebook-messenger fa"></i><b>Messeges</b></a></li>
+                                <li><a class="text-decoration-none" style="color: white;" href="/Notification/"><i class="fa-solid fa-bell fa"></i><b>Notifications</b></a></li>
+                                <li><a class="text-decoration-none" style="color: white;" href="/jobs/"><i class="fa-solid fa-circle-plus fa"></i><b>Job Blogs</b></a></li>
+                                <li><a class="text-decoration-none" style="color: white;" href="/shop/"><i class="fa-solid fa-bag-shopping fa"></i><b>Shop</b></a></li>
+                                <li><a class="text-decoration-none" style="color: white;" href="/profile/"><i class="fa-solid fa-user fa"></i><b>Profile</b></a></li>
+                            </ul>
+                        </div>
+                        <div class="more">
+                            <a class="text-decoration-none" style="color: white;" href='/'>
+                                <i class="fa-solid fa-outdent fa"></i><b>Logout</b>
+                            </a>
+                            <!-- <a class="text-decoration-none" style="color: white;" href="/profile/"><b>more</b></a> <i class="fa-solid fa-bars fa"></i> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block start %}
+            {% endblock %}
+       </div>
+</body>
+
+</html>

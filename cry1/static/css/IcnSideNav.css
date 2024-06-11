@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+.sidebar {
+    position: fixed;
+    /* width: 5%;*/
+    background-color:black;
+    color: white !important;
+    height: 100vh;
+    z-index: 1;
+    /* border: 1px solid black; */
+}
+.sidebarItems{
+    margin-top: 1cm;
+}
+.sidebarItems ul{
+    gap: 34px;
+}
+.sidebarItems ul li a i {
+font-size: 25px;
+}
+.fa{
+    padding-right: 10px;
+}
+.more{
+    margin-top: 150%;
+    font-size: 25px;
+
+}

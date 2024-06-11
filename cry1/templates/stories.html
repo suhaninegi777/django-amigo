@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/stories.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
+    <!-- <script defer src="{% static 'js/stories.js' %}"></script> -->
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- fontawesomr icons -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!--bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container d-flex gap-5 align-items-center">
+        <div>
+            <div id="text_story">
+                <h5><button>text story</button></h5>
+            </div>
+            <div id="for_text_story">
+                <textarea name="likhihui" id="myTextarea" cols="30" rows="5"></textarea>
+                <div id="word_Count">0</div>
+                <div id="warning"></div>
+            </div>
+            <!-- <div id="photos_story">
+                <input type="file" id="file_img" accept="image/*">
+            </div> -->
+        </div>
+        <div id="story_watch_outer">
+            <div id="story_watch">
+                <img src="" id="imagePreview">
+                <h5></h5>
+                <form method="post" action="" enctype="multipart/form-data" id="myForm">
+                    {% csrf_token %}
+                    <input type="hidden" id="datagoing_text" name="datagoing_text">
+                    <div id="photos_story">
+                        <input type="file" id="file_img"  name="datagoing_url" accept="image/*" >
+                    </div>
+                    <!-- <div class="d-flex align-items-end"> -->
+
+                        <input type="submit" value="story">
+
+                        <!-- style="margin-top: 50vh;margin-left: 7cm;"-->
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!------------------------$$$$$--------------SCRIPT------------------$$$$$$$------------------->
+    <script>
+        $(document).ready(function () {
+            console.log("start")
+            // \ -----------------TEXT STORY------------------------
+            $('#text_story').on('click', function () {
+                $('#photos_story').css({ 'display': 'none' })
+                console.log("display none")
+                $('#for_text_story').css({ 'display': 'block' })
+
+                $('#myTextarea').on('input', function () {
+                    const story_content = $(this).val()
+                    $('#story_watch h5').text(story_content)
+                    const digit = story_content.length;
+                    $('#word_Count').text(digit + (digit === 1 ? 'word' : 'digit'));
+
+                    console.log("yes working")
+
+                    if (digit > 100) {
+
+                        $('#warning').html('<b> 100 digit maximum reached </b>');
+                        $('#warning').css({ 'color': 'red' })
+
+                        // this.val(story_content.substring(0, story_content.lastIndexOf(' ', 400)));
+                        $('#myForm').submit((e) => {
+                            e.preventDefault();
+                            alert('Submission prevented because maximum reached.')
+                        })
+
+                    }
+                    else {
+                        $('#datagoing_text').val(story_content)
+
+                    }
+
+                });
+            })
+            // ----------------------------IMAGE STORY----------------------------
+            $(photos_story).on('click', function () {
+                // const story_content = $(this).val()
+
+                var file = ''
+
+                $('#file_img').on('change', (e) => {
+                    file = e.target.files[0]
+                    const reader = new FileReader();
+                    // CONVERTS Image TO BASE 64
+                    reader.readAsDataURL(file);
+                    // console.log(reader)
+                    reader.onload = () => {
+                        // PREVIEWING THE IMAGE USING THE .result
+                        // imagePreview.src = reader.result;
+                        var path = "{% static 'IMAGES/' %}";
+                        var url = reader.result;
+                        // console.log("name=",url)
+                        $('#imagePreview').attr('src', url);
+                        $('#imagePreview').attr('alt', url);
+                        $('#imagePreview').css({ 'height': '85vh', width: '25vw' });
+                        // if (file) {
+                        //     $('#datagoing_url').val(file);
+                        //     console.log(file.name)
+                        //     console.log("Hidden Input Value (datagoing_url):", $('#datagoing_url').val());
+
+                        // }
+                        // else {
+                        //     console.log("file url not showing")
+                        // }
+                    }
+
+
+                })
+                if (file.name != '') {
+                    var file_URL = file.name
+                    console.log('url of selected files')
+                    console.log(file.name)
+                }
+                else {
+                    console.log("not running")
+                }
+            })
+            // form.on('submit',(e)=>{
+            //     image=('#file_img').val()
+            //     text=('#datagoing_text').val()
+            //     e.preventDefault();
+            //     var csrfmiddlewaretoken=$('input[name="csrfmiddlewaretoken"]').val();
+            //     $.ajax({
+            //         url: '/story/?id=' + id,
+            //         type: "POST",
+            //         success: function (data){
+            //             data:{'csrfmiddlewaretoken'=csrfmiddlewaretoken,'image'=image,'text'=text}
+            //             console.log(data)
+                        
+            //         }
+            //     });
+            // })
+
+        });
+    </script>
+</body>
+
+</html>

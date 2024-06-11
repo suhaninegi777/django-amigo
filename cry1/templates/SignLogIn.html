@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/SignLogIn.css' %}">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer " />
+    <script defer src="{% static 'js/SignLogIn.js' %}"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h2> Login / Signup Form</h2>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="/signin/" method="post">
+                    
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    
+                        {% csrf_token %}
+                        <input type="text" placeholder="Name" name="name" />
+                        <input type="text" placeholder="Usename" name="username" />
+                        <input type="email" placeholder="Email" name="email" />
+                        <input type="password" placeholder="Password" name="password" />
+                        <input type="submit" value="SignIn">
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="/login/" method="post">
+                   
+                    <h1>Login</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    
+                        {% csrf_token %}
+                        <input type="text" name="username" placeholder="username" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <a href="#">Forgot your password?</a>
+                        <input type="submit" value="Login">
+                </form>    
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Login</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

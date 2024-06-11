@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&family=Josefin+Sans:ital@0;1&display=swap');
+
+.container-fluid{
+    width: 100vw;
+}
+.last-column-width{
+    width: 35%;
+    background-color: rgb(234, 247, 247);
+    height: 100vh;
+    background: black;
+    color: white;
+    align-self: flex-end;
+}
+#joke_generator h3{
+      font-family: "Briem Hand", cursive;
+
+}
+
+footer{
+    display: none;
+}
+@media (max-width: 991.98px){ 
+    .last-column-width{
+        display: none;
+    }
+    #joke_generator{
+        display: none;
+    }
+}
+@media (max-width: 576.98px){ 
+    #joke_generator{
+        display: none;
+    }
+    .last-column-width{
+        display: block;
+        position: fixed;
+        top: 92vh;
+        width: 100vw;
+        max-width: 100%;
+        background-color: yellow;
+        height: 50px;
+        padding: 5px 0px;
+        font-weight: 1000;
+    }
+    footer{
+        display: block;
+    }
+    .last-column-width .footer ul{
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        width: 100vw;
+        /* padding-left: 10px;
+        padding-bottom: 15px; */
+        /* font-size: 20px; */
+    }
+ }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/recruit_form.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="apply_box">
+            <h1 style="border-bottom: 1px solid black; padding-bottom: 5px; margin-bottom: 1cm;">
+                Add a CV For Employer</h1>
+            
+            <form action="" method="post">
+                
+                <div class="form_container">
+                    <div class="options">
+                        <label for="Company_name"> Name</label>
+                        <input type="text" name="name" id="name" placeholder="Company name">
+                    </div>
+
+                    <div class="options">
+                        <label for="upload" for="uploadcv">Upload CV</label>
+                        <input type="file" id="uploadcv" name="cv">
+                    </div>
+                </div>
+            </form>
+
+
+
+
+        </div>
+    </div>     
+</body>
+</html>

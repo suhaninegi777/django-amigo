@@ -1,0 +1,180 @@
+
+{% extends 'IconSideNav.html' %}
+<div class="row">
+    <div class="col-1">  
+        
+        {% load static %}
+        {% block start %}
+    </div>
+  
+    <div class="col-10 mx-auto">
+<!-- Button trigger modal -->
+
+  
+
+         
+ <!---------------------------------topsearchbar---------------------------------------- -->
+ <navbar class="container">
+    <div class=" d-flex justify-content-evenly align-items-center mt-1">
+        <b class="fs-4"> Jobs</b>
+        <div></div>
+          </div>
+    <hr>
+</navbar>
+        <!--------------------------------------hero section------------------------------------------ -->
+        <div class="hero_section container">
+            <span>search result</span>
+            <p>Sort by:relevance- date</p>
+            <div class="row gx-5">
+                <!-------------------------------jobCards------------------------------------ -->
+                {% for j in jobs %}
+                <div class="modal fade" id="exampleModal{{j.id}}" tabindex="-1" aria-labelledby="exampleModal{{j.id}}Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModal{{j.id}}Label">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="job_detail_block job_cards">
+                                <div>
+                                    <div class="d-flex justify-content-end">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+                                    <h2>{{j.jobrequired}}</h2>
+                                    <a href="#" style="border-bottom: 1px solid #ccc;"
+                                        class="text-decoration-none">{{j.company.name}}</a>
+                                    <p>{{j.company.address}}<br>
+                                        {{j.company.salary}}</b><br>
+                                    </p>
+                                    
+                                   {% if j.company.user != request.user %}
+                                   <form action="/applyjob/" method="post" enctype='multipart/form-data'>
+                                    <input type="hidden" name="jid" value="{{j.id}}"/>
+                                    {% csrf_token %}
+                                    <div class="form_container">
+                                        <div class="options">
+                                            <label for="uploadcv">Upload CV <i class="fa fa-file"></i> </label>
+                                            <input type="file" id="uploadcv" class="d-none" name="cv">
+                                            <button>Apply Now</button>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                                {% else %}
+                                Not allowed
+                                   {% endif %}
+                                </div>
+                                <hr>
+                                <div class="profileInsight">
+                                    <h3>Profile Insight</h3>
+                                    <small>here is how the job qualification alignwith your profile</small>
+                                    <br>
+                                    <h6>Skills</h6>
+                                    {% comment %} <span>react native</span> <span>nodejs</span> {% endcomment %}
+                                    <span>{{j.skillsrequired}}</span> 
+                                    <h6>Education</h6>
+                                    <span>{{j.educationrequired}}</span>
+                                     {% comment %} <span>bachelors degree</span> {% endcomment %}
+                                    <br>
+                                    <hr>
+                                </div>
+                                <div class="jobdetail">
+                                    <h3>Job details</h3>
+                                    <small>here is how the job qualification alignwith your profile</small>
+                                    <h6>Pay</h6>
+                                    <span>{{j.salary}}</span>
+                                    <h6>Job Type</h6>
+                                    <span>{{j.jobtype}}</span>
+                                    <h6>Shift & Schedule</h6>
+                                    <span>{{shift}}</span>
+                                    <br>
+                                    <hr>
+                                </div>
+                                <div class="Location">
+                                    <h3>Location</h3>
+                                    <span> {{j.company.address}}</span>
+                                    <br>
+                                    <hr>
+                                </div>
+                                <div class="Benefits">
+                                    <h3>Benefits</h3>
+                                    <small>Pulled from the job descritption</small>
+                                    <li>Paid time off</li>
+                                    <br>
+                                    <hr>
+                                </div>
+                                <div class="description">
+                                    <h3>Full Job Description</h3>
+                                    <p>{{j.description}}
+                                        <br><br>
+                                        Interested? Please visit our Dehradun office:
+                                    </p>
+                                    <p>Devzila Software Solutions<br>
+                                        SCO - 91, 2nd floor,<br>
+                                        City Centre, Sector - 5<br>
+                                        Dehradun</p>
+                                    <p>Pay: ₹336,208.48 - ₹1,496,720.79 per year</p>
+                                    <p>Benefits</p>
+                                    <li>Paid time off</li>
+                                    <p>Schedule</p>
+                                    <li>Day Time Shift</li>
+
+                                    <hr>
+                                </div>
+                                <div class="pb-4">
+                                    <button>Report Job</button>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="d-flex w-100 gap-5 " id="ww">
+                   
+                    {% for j in jobs %}
+                        <!-- Modal -->
+                    <div class="job_cards jc" data-bs-toggle="modal" data-bs-target="#exampleModal{{j.id}}">
+                        <div>
+                            <div class="job_profile d-flex gap-5 align-items-start">
+                                <h2>{{j.jobrequired}}</h2>
+                                <i class="fa-solid fa-ellipsis-vertical pt-2 fs-4"></i>
+                            </div>
+                            <p>{{j.company.companyname}} <br>
+                                {{j.company.address}}</p>
+                            <b>salary rupees {{j.salary}}</b>
+                            <b>{{j.jobtype}}</b>
+                            <b>{{j.shift}}</b>
+                            <p>Easy Apply -></p>
+                            <ul>
+                                <li>we are offering software developmentjob with 6 month
+                                    training in web development techonology
+                                </li>
+                                <li>we are offering software developmentjob with 6 month
+                                </li>
+                            </ul>
+                        </div>
+                        {% comment %} <p>visited _ minute ago</p> {% endcomment %}
+
+                    </div>
+                    
+                    {% endfor %}
+                    
+                </div>
+
+                <!---------------------------------jobDetail---------------------------------- -->
+           
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}

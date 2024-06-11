@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* border: 1px solid palevioletred; */
+}
+
+br{
+    color: white;
+}
+button{
+    border-radius: 15px;
+}
+
+.butn{
+    border: 1px solid rgba(68, 54, 54, 0.081);
+    border-radius: 5px;
+    padding: 5px 10px ;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.331);
+}
+.butn:hover{
+    border: 1px solid black ;
+    background: rgba(47, 255, 137, 0.658);
+    /* color: white; */
+}
+.butn a{
+    text-decoration: none;
+    color: #000;
+}
+.profilepost{
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+    
+}
+.downpar{
+    height:300px;
+    overflow-y: scroll;
+}
+.profilepost h4{
+    font-weight: 700;
+}
+
+.profilepost:focus, 
+.profilepost h4:active,
+.profilepost h4:hover{
+    border-bottom: 2px solid black;
+    transition: border .1s;
+
+}
+.popic{
+    border-radius: 5px;
+}
+#PostkaCircle{
+    height: 115px;
+    width: 115px;
+    border: 1px solid black;
+    border-radius: 80%;
+    display: inline-block;
+    background-color:blanchedalmond;
+    position: relative;
+}
+
+.wholeprof{
+    overflow: hidden;
+    height: 100vh;
+}
+/* .profiledetails{
+    box-shadow: 1px 1px 6px #ccc;
+    max-width: 100%;
+    border-radius: 2px;
+    background-color: rgb(220, 248, 250);
+} */
+/* .mid_right{
+    width: 700px;
+    max-width: 100%;
+} */
+
+

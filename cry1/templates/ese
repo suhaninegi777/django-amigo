@@ -1,0 +1,204 @@
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="{% static 'css/column1.css' %}"> -->
+
+    <!-- <script defer src="{% static 'js/profile.js' %}"></script> -->
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- fontawesome icons -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <title>Messsenger</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="profilepage d-flex gap-5">
+    {% extends 'sideNav.html' %}
+    {% load static %}
+    {% block start %} -->
+
+    <!-- ----------------------------------midddpart----------------------------------------- -->
+    <!-- <div class="mx-5">
+        <div class="pt-2 " style="border-bottom:1px solid black;">
+            <h4>{{username}}</h4>
+        </div>
+
+        <div class="profiledetails text-center pt-3 mt-4 ">
+            <a href="/storyShow/">
+                <div class="PostkaCircle" id="PostkaCircle">
+                    <img src="{% static 'IMAGES/a4_GhcSEqp.png' %}" alt="tu" id="PostkaCircle">
+                </div>
+            </a>
+            <h4 class="ps-2 pt-2">{{request.user.first_name}} </h4>
+            <ul class="list-unstyled">
+                <li class="p-2">85 follower</li>
+                <li class="p-2">87 following</li>
+                <li class="p-2">3 posts</li>
+                <li class="p-2">{{bio}}</li>
+                <div class="mt-3 text-align-center">
+                    <button class="butn">
+                        <a href="/story/" class="text-decoration-none">Add stories</a>
+                    </button>
+                    <button class="butn editbutton">Edit profile</button>
+                </div>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="mid_right">
+        <div class="profilepost">
+            <div class="d-flex pt-2 align-items-center justify-content-evenly" style="border-bottom:1px solid black;">
+                <h4>Posts</h4>
+                <button style="border-radius: 10px; font-weight: 800;" id="clickaddpost">Add Posts</button>
+
+
+                <!-- _____________________CREATE_POST_WORRK____________________________ -->
+                <!-- <div class="post_absolute_part">
+                    <div class="text-end cross">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="d-flex align-items-start mt-4 justify-content-center ">
+                        <form action="/profile/" method="post" id="ptsform" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="d-flex">
+                                <div id="create_post">
+                                    <label for="adpost" style="padding-top: 4cm;">
+                                        select pic from pc</label>
+                                    <input type="file" name="adpost" id="adpost" accept="image/*"
+                                        style="visibility:hidden; position: absolute;">
+                                    <img src="" alt="" id="imgpreview">
+                                </div>
+                                <div id="caption_area" class="bg-fluid px-3">
+                                    <h6>Suhani_negi777</h6>
+                                    <textarea id="capt" placeholder="write caption here" name="caption" cols="35"
+                                        rows="10">
+                                </textarea>
+                                    <br><br>
+                                    <input type="submit" id="share" value="share">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> --> 
+            <!-- ________________________ALL_POSTS_________________________________ -->
+            <!-- <div class="d-flex gap-3 flex-wrap pt-4">
+                {% for i in pd %}
+                <div class="imgclick" data-image="{% static 'images/' %}{{ i.post.name}}" data-caption="{{i.caption}}">
+                    <img src="{% static 'images/' %}{{ i.post.name}}" height="300" width="300" alt="nahi lagi">
+                    <p>{{i.caption}}</p>
+                </div>
+                {% endfor %}
+
+            </div> -->
+            <!-- ___________________________________VIEW_SINGLE_POST___________________________________________ -->
+            <!-- <div id='showpost'>
+                <div class="text-end cross">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="PostContents row">
+                    <div class="d-flex">
+                        <div class="post_icons_image col-7 border border-right-secondary" style="height: 94%;">
+                            <div class="postImage" style="height: 100%; width:100%; object-fit: cover;">
+                                <img src="" alt="nahi lagi">
+                            </div>
+
+                        </div>
+                        <div class=" showpo col-5">
+                            <div class="postHeader d-flex align-items-center justify-content-between">
+                                <div class="d-flex">
+                                    <div class="content d-inline PostkaCirclecover">
+                                        <div class="PostkaCircle">
+                                            <div class="PostkaInnerCircle"
+                                                style="margin-top:-0.5px; margin-left:0.2px;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class='pt-2 sn'><b>Suhani negi</b>
+                                </div>
+                                <i class="fa-solid fa-ellipsis-vertical fs-4 "></i>
+                            </div>
+                            <p id="img_caption"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- ______________________________EDIT_PROFILE_____________________________________________ -->
+        <!-- <div class="editpage pt-2">
+            <div class="px-5">
+                <div style="border-bottom:1px solid black;">
+                    <h4> Edit profile</h4>
+                </div>
+                <form action="/save_prof_details/" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-between mt-3">
+                        <img src="" alt="tu" height="50" width="50" class=" rounded-circle">
+                        <label for="changeimg"><b>Change Image</b></label>
+                        <input type="file" id="changeimg" name="image" value="change profile pic" accept="image/*"
+                            style="visibility: hidden; position: absolute;">
+                    </div> <br>
+                    name:<input type="text" name="name"> <br> <br>
+                    <!-- username:<input type="text" name="username"> <br> <br> -->
+                    edit bio:<br><textarea type="text" name="bio" cols="60">
+                         </textarea><br> <br>
+                    male<input type="radio" name="gender" value="male">
+                    female<input type="radio" name="gender" value="female"> <br> <br>
+                    <h5><span>Account Privacy</span></h5>
+                    public <input type="radio" name="privacy" value="public"><br>
+                    private <input type="radio" name="privacy" value="private"><br><br>
+                    <input type="submit" class="sub_but" value="save details" style="width: 100%;"><br><br>
+                    <button class="exit_but" style="width: 100%;">exit</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock %}
+
+</div> -->
